@@ -1,0 +1,56 @@
+
+%estilobarrabus{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+%estiloingreso{
+    list-style: none;
+    font-size: 0.85em;
+    padding-right: 10px;
+    margin-top: 15px;
+}
+
+%controlcarrusel{
+    background-color: rgba(70, 67, 67, 0.75);
+    margin: auto 0;
+    width: 4%;
+    height: 15%;
+    border-radius: 50%;
+}
+
+%boxmod_categorias{
+    width: 101.3%;
+    height: 100%;
+    margin-top: 2.5%;
+}
+
+%estilocategoria{
+        color: white;
+        font-size: x-large;
+        font-weight: bolder;
+        position: relative;
+        bottom: 50%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(70, 67, 67, 0.5);
+}
+
+%estilowapp{
+    position: fixed;
+    z-index: -3;
+    margin-left: 91%;
+    margin-top: 23.5%;
+}
+
+%gridcategorias{
+    grid-column: 1 / -1;
+    grid-row: 5 / 8;
+    width: 10.3%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 2.5%;
+}
+

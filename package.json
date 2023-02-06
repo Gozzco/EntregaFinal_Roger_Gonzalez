@@ -1,0 +1,19 @@
+{
+  "name": "preentreganro3_roger_gonzalez",
+  "version": "1.0.0",
+  "description": "3eraPreentega Coderhouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gozzco/Gozzco-preEntregaNro3_Roger_Gonzalez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gozzco/Gozzco-preEntregaNro3_Roger_Gonzalez/issues"
+  },
+  "homepage": "https://github.com/Gozzco/Gozzco-preEntregaNro3_Roger_Gonzalez#readme"
+}

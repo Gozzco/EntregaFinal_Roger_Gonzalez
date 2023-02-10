@@ -1,10 +1,10 @@
-/*--------Reset---------*/
+/*
 *{
     margin:0;
     padding:0;
 }
 
-/*--------Body Header---------*/
+
 
 
 #body__index{
@@ -129,7 +129,7 @@
         }
     }
 
-    /*--------Body content---------*/
+    /*--------Body content---------
 
     #carrusel{
         grid-column: 1 / -1;
@@ -256,9 +256,9 @@
                 @extend %estilocategoria;
             }
         }
-    }
+    }---*/
 
-    /*--------whatsapp---------*/
+    /*--------whatsapp---------
 
     #whatsapp {
         position: fixed;
@@ -333,4 +333,4 @@
     }
 
 
-}
+}------*/

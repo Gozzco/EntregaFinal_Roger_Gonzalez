@@ -1,336 +1,383 @@
-/*
-*{
-    margin:0;
-    padding:0;
+#body__index{
+    width: 95%;
+    margin: $centrar;
+    background-color:$fondo;
+    display: grid;
+    grid-template-columns: repeat(10,10%);
+    grid-template-rows: 20% 10% 6% 5% 10% 10% 10% 15% 10%;
+    row-gap: 1%;
+
+    #header__index{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-image: url(../assets/needobannerprod.jpg);
+        display: grid;
+        grid-template-columns: 10% 15% 50% 15% 10%;
+        grid-template-rows: 15% 15% 20% 20% 30%;
+        row-gap: 2%;
+    }
+}
+
+
+/*-----Elementos del header-------*/
+
+.navbar{
+    display: $oculto;
+    font-family: $sinserif;
+
+    .nav-item a{
+        color: $xnaranja;
+    }
+}
+
+
+.headercont__logo{
+    grid-column: 1 / 3 ;
+    grid-row: 1 / 3;
+}
+
+.headercont__logo, img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.header__navegacion{
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+    font-family: $sinserif;
+
+    &, ul{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+        font-size: 1em;
+        transition: $animacion;
+
+        &, a{
+            padding-right: 15px;
+            padding-left: 15px;
+            transition: $animacion;
+            color: $claro;
+            border: 1px solid rgb(255, 255, 255, 0); 
+        }
+    }
+}
+
+.header__navegacion, ul, form, .busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $animacion;
+
+    .btn{
+        color: $claro;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .formbtn{
+        @extend %estilobarrabus;
+    }
+}
+
+.header__listaSecundaria{
+    display: flex;
+    justify-content: space-evenly;
+    grid-column: 4 / 6;
+    font-family: $sinserif;
+    color: $claro;
+
+    &, li{
+        @extend %estiloingreso;
+    }
+}
+
+#presentacion{
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+
+    .presentacion__textoPrincipal, h1{
+        font-family: $conserif;
+        color: $naranja;
+        font-size: 1.7em;
+        font-weight: bolder;
+        padding: 5% 0% 0% 0%;
+        }
+    
+    .presentacion__textoSec, h2{
+        display: flex;
+        justify-content: center;
+        font-family: $sinserif;
+        color: $claro;
+    }
+}
+
+
+/*--------MAIN------------*/
+
+
+#carrusel{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    & img{
+        height: 270px;
+        object-fit: cover;
+    }
+
+    & .carousel-control-prev{
+        @extend %controlcarrusel;
+    }
+    
+    & .carousel-control-next{
+        @extend %controlcarrusel;
+    }
+}
+
+#bullets{
+    grid-column: 1 / 11;
+    grid-row: 4 / 5;
+    width: 99%;
+    display: grid;
+    grid-template-columns: 10% 35% 2% 10% 35%;
+    gap: 0.8%;
+
+    .bullets1{
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $xclaro;
+    }
+    
+    .bullets2{
+        grid-column: 4 / 6;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $xclaro;
+    }
+    
+    .envio1 i, .envio2 i{
+        border-radius: $curvaborde;
+        font-size: 250%;
+    }
+    
+    & p{
+        color: $gris;
+    }
+}
+
+
+#categorias{
+    grid-column: 1 / 11;
+    grid-row: 5 / 10;
+    width: 101.3%;
+    height: 100%;
+    margin-top: 2.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .categorias__ img{
+        transition: $animacion;
+    }
+    
+    .almohadones a{
+        @extend %estilocategoria;
+    }
+    
+    .decoracion a{
+        @extend %estilocategoria;
+    }
+    
+    .cuadros a{
+        @extend %estilocategoria;
+    }
+    
+    .mantas a{
+        @extend %estilocategoria;
+    }
+    
+    .sillas a{
+        @extend %estilocategoria;
+    }
+    
+    .mascotas a{
+        @extend %estilocategoria;
+    }
+}
+
+/*-----Contacto---------*/
+
+#whatsapp {
+    @extend %estilowapp;
+
+    & i{
+        font-size: 300%;
+        color: $gris;
+    }
+}
+
+/*-------Footer---------*/
+
+#footer{
+    @extend %footer;
+}
+
+
+/*-----Pseudo Clases-------*/
+
+.categorias__ img:hover{
+    scale: 103%;
+}
+
+.header__navegacion ul a:hover{
+    border: 1px solid $claro;
+}
+
+
+
+/*----Media Queries-----*/
+
+
+
+@media (max-width: 375px) {
+
+#body__index{
+    width: 100%;
+    grid-template-rows: 15% 10% 58% 10%;
+    grid-template-columns: 50% 50%;
+    row-gap: 0.5%;
+
+    #header__index{
+        grid-row: 1 / 2;
+        grid-template-rows: 10% 10% 50%;
+        row-gap: 5%;
+        height: 98%
+    }
+}
+
+
+.navbar{
+    display: contents;
+}
+
+.header__listaSecundaria{
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / -1;
+}
+
+.headercont__logo{
+    grid-row: 2 / 4;
+    grid-column: 1 / 4;
+    padding: 5%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.header__navegacion ul{
+    display: none;
+}
+
+#presentacion{
+    grid-column: 2 / 5;
+    grid-row: 3 / 5;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .presentacion__textoPrincipal h1{
+        font-size: 1.5em;
+        text-align: center;
+        height: 50%;
+    }
+    
+    .presentacion__textoSec h2{
+        font-size: 1.1em;
+        display: flex;
+        align-items: flex-start;
+        text-align: center;
+    }
+}
+
+#carrusel{
+    display:none;
+}
+
+#bullets{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 0%;
+    row-gap: 5%;
+    font-size: 70%;
+
+    .bullets1{
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .bullets2{
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .bullets__textoenvio1{
+        padding: 0% 2% 0% 2%;
+    }
+    
+    .envio1{
+        padding: 0% 5% 0% 5%;
+    }
+}
+
+#categorias{
+    grid-row: 3 / 4;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.12fr;
+    row-gap: 1%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.categorias__ img{
+    width: 80%;
+    max-height: 100%;
+
+    .almohadones a, .decoracion a, .cuadros a, .mantas a, .sillas a, .mascotas a{
+        left: $positextcat;
+    }
+}   
+
+#whatsapp {
+    display:none;
+}
+
+#footer{
+    @extend %footer375px;
+}
+
 }
 
 
 
 
-#body__index{
-    display: grid;
-    grid-template-columns: repeat(10,10%);
-    grid-template-rows: 20% 10% 6% 5% 10% 10% 10% 10% 10%;
-    row-gap: 1%;
-    background-color: rgba(252, 232, 173, 0.452);
-    margin: $centrar;
-    width: 95%;
-
-    #header__index{
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-        display: grid;
-        grid-template-columns: 10% 15% 50% 15% 10%;
-        grid-template-rows: 15% 15% 20% 20% 30%;
-        row-gap: 2%;
-        background-color:rgb(70, 67, 67);
-
-        .headercont__logo{
-            grid-column: 1 / 3 ;
-            grid-row: 1 / 3;
-            
-
-            img{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 80%;
-            }
-        }
 
 
-        .header__navegacion{
-            grid-column: 1 / 5;
-            grid-row: 5 / 6;
-            font-family:'Raleway', sans-serif;
-        
-            ul{
-                display: flex;
-                justify-content: space-between;
-                margin: 0px;
-                font-size:'Raleway', sans-serif;
-
-                a{
-                    padding-right: 10px;
-                    padding-left: 30px;
-                    transition: $animacion;
-                    color: white;
-                    hover{border: 1px solid white;}
-                }
-
-                form{
-                    .busqueda{
-                        transition: $animacion;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-    
-                        .btn{
-                            color: white;
-                            font-family:'Raleway', sans-serif;
-                        }
-    
-                        .formbtn{
-                            @extend %estilobarrabus;
-                        }
-                    }
-                }
-            }
-
-        }
-        
-        .header__listaSecundaria{
-            display: flex;
-            justify-content: space-evenly;
-            grid-column: 4 / 6;
-            font-family: 'Raleway', sans-serif;
-            color:white;
-
-            ul{
-                li{
-                    @extend %estiloingreso;
-                }
-            }
-        }
-
-        .navbar{
-            display: $oculto;
-            font-family:'Raleway', sans-serif;
-            
-            a{
-                color: rgb(250, 165, 9);
-            }
-        }
-
-    }
-
-    #presentacion{
-        grid-column: 3 / 4;
-        grid-row: 2 / 4;
-
-        .presentacion__textoPrincipal{
-    
-            h1{
-                font-family:'Marcellus', serif;
-                color: rgb(235, 188, 46);
-                font-size: 1.7em;
-                font-weight: bolder;
-                padding: 5% 0% 0% 0%;
-            }
-        }
-    
-        .presentacion__textoSec{
-            h2{
-                font-family: 'Raleway', sans-serif;
-                color: white;
-                display: flex;
-                justify-content: center;
-            }
-        }
-    }
-
-    /*--------Body content---------
-
-    #carrusel{
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
-
-        img{
-            height: 270px;
-            object-fit: cover;
-        }
-    
-        .carousel-control-prev{
-            @extend %controlcarrusel;
-        }
-    
-        .carousel-control-next{
-            @extend %controlcarrusel;
-        }
-    }
-
-    #bullets{
-        grid-column: 1 / 11;
-        grid-row: 4 / 5;
-        display: grid;
-        grid-template-columns: 10% 35% 2% 10% 35%;
-        gap: 0.8%;
-        width: 250%;
-    
-        .bullets1{
-            grid-column: 1 / 3;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: white;
-
-            .envio1{
-                i{
-                    border-radius: $curvaborde;
-                    font-size: 250%;
-                }
-            }
-    
-            .bullets__textoenvio1{
-                p{
-                    color:rgb(70, 67, 67);
-                }
-            }
-        }
-
-        .bullets2{
-            grid-column: 4 / 6;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: white;
-
-            .envio1{
-                i{
-                    border-radius: $curvaborde;
-                    font-size: 250%;
-                }
-            }
-    
-            .bullets__textoenvio1{
-                p{
-                    color: rgb(70, 67, 67);
-                }
-            }
-        }
-
-    }
-
-    #categorias{
-        grid-column: 1 / -1;
-        grid-row: 5 / 8;
-        width: 10.3%;
-        height: 50%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        margin-top: 2.5%;
-        width: 101.3%;
-        height: 100%;
-        margin-top: 2.5%;
-
-        .categorias__{
-            img{
-                &:hover{scale: 103%;}
-                transition: $animacion;
-            }
-        }
-    
-        .almohadones{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    
-        .decoracion{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    
-        .cuadros{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    
-        .mantas{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    
-        .sillas{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    
-        .mascotas{
-            a{
-                @extend %estilocategoria;
-            }
-        }
-    }---*/
-
-    /*--------whatsapp---------
-
-    #whatsapp {
-        position: fixed;
-        @extend %estilowapp;
-
-        i{
-            font-size: 300%;
-            color:rgb(70, 67, 67);
-        }
-    }
-
-
-    /*--------footer---------*/
-
-
-    #footer{
-        grid-column: 1 / -1;
-        grid-row: -1 / -1;
-        display: grid;  
-        grid-template-columns: repeat(8,1fr);
-        grid-template-rows: repeat(2, 1fr);
-        row-gap: 10%;
-        padding: 5%;
-        background-color: nth($list:$colores, $n:2 );
-
-        .footer__logo{
-            grid-column: 1 / 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10%;
-        }
-        
-        .footer__enlacesInternos{
-            grid-column: 3 / 8;
-            grid-row: 2 / 3;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding: 1%;
-
-            li{
-                padding: 10px;
-                color: nth($list:$colores, $n:5 );
-                font-family: nth($list:$fonts, $n:1 );
-                font-size: nth($list:$fsize, $n:7 );
-    
-                a {
-                    padding: 10px;
-                }
-               
-            }
-        }
-
-        .footer__enlacesredes{
-            list-style: none;
-            grid-column: 8 / 9;
-            grid-row: 2 / 3;
-            list-style: none;
-            padding: 2%;
-            color: nth($list:$colores, $n:5 );
-
-            a{
-                padding: 15px;
-                font-size:nth($list:$fsize, $n:4 );
-            }
-        }
 
 
         
 
-    }
 
 
-}------*/
+

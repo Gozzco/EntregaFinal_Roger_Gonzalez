@@ -1,11 +1,6 @@
 #body__index{
-    width: 95%;
-    margin: $centrar;
-    background-color:$fondo;
-    display: grid;
-    grid-template-columns: repeat(10,10%);
+    @extend %formatobody;
     grid-template-rows: 20% 10% 6% 5% 10% 10% 10% 15% 10%;
-    row-gap: 1%;
 
     #header__index{
         grid-column: 1 / -1;

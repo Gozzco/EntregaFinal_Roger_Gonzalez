@@ -1,0 +1,125 @@
+#body__productos{
+    @extend %formatobody;
+    grid-template-rows: 200px 80% 10%;
+
+    #header__productos{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-image: url(../assets/needobannerprod.jpg);
+        display: grid;
+        grid-template-columns: 10% 15% 50% 15% 10%;
+        grid-template-rows: 1fr 1fr;
+        padding: 1.2%;
+        row-gap: 3%;
+    }
+
+
+}
+
+/*----CUERPO PRODUCTOS PAGE---------------*/
+
+#cont__productos{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.3fr;
+    row-gap: 4%;
+    column-gap: 8%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-right: 10%;
+
+    .listado{
+        background-color: $fondo;
+        padding: 10% 0% 0% 0%;
+    }
+
+    .cont__productos__{
+
+    transition: $animacion;
+        
+        & a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
+        }
+
+        & p{
+            color: $gris;
+            font-family: $sinserif;
+            display: flex;
+            justify-content: flex-start;
+            font-weight: bold;
+            font-size: x-large;
+            padding: 3% 5% 1% 17%;
+        }
+
+        & .fa-solid{
+            color: $gris;
+            background-color: $xnaranja;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding: 5%;
+            transition: $animacion;
+        }
+    }
+}
+
+/*-----Pseudo Clases-------*/
+
+.cont__productos__:hover{
+    scale: 103%;
+}
+
+.fa-solid:hover{
+    scale: 94%;
+}
+
+
+/*----Media Queries-----*/
+
+
+
+@media (max-width: 375px) {
+
+    #body__productos{
+        width: 100%;
+        grid-template-rows: 200px 78% 26%;
+        row-gap: 0.5%;
+    }
+
+    #header__productos{
+        display: grid;
+        grid-template-rows: 10% 10% 50%;
+        row-gap: 15%;
+        padding: 3%;
+    }
+
+    #cont__productos{
+        grid-column: 2 / 14;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        row-gap: 1%;
+
+        .cont__productos__ {
+            padding: 10% 0% 0% 0%;
+            margin: 0%;
+            width: 88%;
+            font-size: 0.7em;
+
+            & img{
+                width: 100%;
+            }
+        }
+    }
+    
+
+}
+
+
+
+

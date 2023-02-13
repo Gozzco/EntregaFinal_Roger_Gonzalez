@@ -1,3 +1,11 @@
+%formatobody{
+    width: 95%;
+    margin: $centrar;
+    background-color:$fondo;
+    display: grid;
+    grid-template-columns: repeat(10,10%);
+    row-gap: 1%;
+}
 
 %estilobarrabus{
     border: 1px solid white;
@@ -52,6 +60,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 2.5%;
+}
+
+/*----Nosotros---*/
+
+%fuentesocio{
+    font-size: xx-large;
+    color: $naranja;
+    font-weight: bolder;
 }
 
 

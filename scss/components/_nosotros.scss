@@ -1,0 +1,164 @@
+#body__nosotros{
+    @extend %formatobody;
+    grid-template-rows: 200px 40% 40% 10%;
+
+    #header__nosotros{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-image: url(../assets/needobannerprod.jpg);
+        display: grid;
+        grid-template-columns: 10% 15% 50% 15% 10%;
+        grid-template-rows: 1fr 1fr;
+        padding: 1.2%;
+    }
+
+    #nosotros__resena__historica{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+
+        &, p{
+            background-color: $xclaro;
+            font-size: 1.1em;
+            padding: 2%;
+            width: 95%;
+        }
+    }
+    
+    
+    #nosotros__socios{
+        grid-column: 1 / -1;
+        grid-row: 3 / 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5%;
+        margin-bottom: 2%;
+
+        .socios1, .socios2{
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $xgris;
+            font-family: $sinserif;
+
+            & p{
+                font-family: $sinserif;
+                color: $xnaranja;
+                font-size: 1.1em;
+                padding: 5%;
+            }
+
+            & img{
+                width: 70%;
+                height: 70%;
+                border-radius: 50%;
+                padding: 3%;
+                transition: $animacion;
+            }
+        }
+    }
+    
+    .socios1 h2{
+        @extend %fuentesocio;
+    }
+    
+    .socios2 h2{
+        @extend %fuentesocio;
+    }
+    
+    #nosotros__laEmpresa img{
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    #nosotros__laEmpresa p{
+        font-family: $sinserif;
+        color: $gris;
+    }
+
+}
+
+/*----Pseudo Clases-----*/
+
+
+.socios1 img:hover{
+    scale: 103%;
+}
+
+.socios2 img:hover{
+    scale: 103%;
+}
+
+
+/*----Media Queries-----*/
+
+
+
+@media (max-width: 375px) {
+
+#body__nosotros{
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 30% 60% 10%;
+}
+
+    #header__nosotros{
+        display: grid;
+        grid-template-rows: 10% 10% 50%;
+        row-gap: 15%;
+        padding: 3%;
+    }
+
+    #nosotros__resena__historica{
+        grid-row: 2 / 3;
+        margin: $centrar;
+
+        #nosotros__laEmpresa{
+            p{
+                font-size: 13px;
+                width: 100%;
+
+            }
+        }
+    }
+    
+    #nosotros__socios{
+        grid-row: 3 / 5;
+        align-items: center;
+        margin-bottom: 0%;
+
+        .socios1{
+            width: 100%;
+            flex-wrap: wrap;
+
+            &, p{
+                display: none;
+            }
+
+            &, img{
+                margin: $centrar;
+                width: 30%;
+                height: 30%;
+            }
+             
+        }
+    
+        .socios2{
+            width: 100%;
+            flex-wrap: wrap;
+
+            &, p{
+                display: none;
+            }
+
+            &, img{
+                margin: $centrar;
+                width: 30%;
+                height: 30%;
+            }
+             
+        }
+    }
+    
+}

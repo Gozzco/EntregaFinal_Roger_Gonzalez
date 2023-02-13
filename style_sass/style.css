@@ -1,4 +1,4 @@
-#body__faqs, #body__item, #body__nosotros, #body__productos, #body__index {
+#body__contacto, #body__faqs, #body__item, #body__nosotros, #body__productos, #body__index {
   width: 95%;
   margin: 0 auto;
   background-color: rgba(252, 232, 173, 0.452);
@@ -870,6 +870,49 @@
     margin-top: 10%;
     text-align: center;
   }
+}
+#body__contacto {
+  grid-template-rows: 200px 80% 10%;
+}
+#body__contacto #header__contacto {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  background-image: url(../assets/needobannerprod.jpg);
+  display: grid;
+  grid-template-columns: 10% 15% 50% 15% 10%;
+  grid-template-rows: 1fr 1fr;
+  padding: 1.2%;
+  row-gap: 1%;
+}
+#body__contacto #formulario {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#body__contacto #formulario .icono_contacto {
+  width: 100%;
+  background: rgb(70, 67, 67);
+  overflow: hidden;
+  color: rgb(250, 165, 9);
+}
+#body__contacto #formulario .contacto label, #body__contacto #formulario .contacto input, #body__contacto #formulario .contacto textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+#body__contacto #formulario .contacto label {
+  font-weight: 700;
+}
+#body__contacto #formulario .contacto input:not([type=submit]), #body__contacto #formulario .contacto textarea {
+  border: none;
+  border-bottom: 2px solid rgb(250, 165, 9);
+  margin-bottom: 10px;
+  font-size: 20px;
+  outline: none;
+  color: rgb(70, 67, 67);
 }
 
 /*# sourceMappingURL=style.css.map */
